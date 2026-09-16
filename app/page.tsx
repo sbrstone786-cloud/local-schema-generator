@@ -67,16 +67,22 @@ export default function SchemaGenerator() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700">Business Category</label>
-            <select 
-              value={businessType} 
-              onChange={(e) => setBusinessType(e.target.value)}
-              className="mt-1 w-full p-2 border rounded-md bg-white"
-            >
-              <option value="LocalBusiness">General Local Business</option>
-              <option value="MedicalBusiness">Medical / Dental Clinic</option>
-              <option value="HVACBusiness">HVAC / Home Services</option>
-              <option value="RealEstateAgent">Real Estate Agency</option>
-            </select>
+            <select
+  className="w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white"
+  value={category}
+  onChange={(e) => setCategory(e.target.value)}
+>
+  <option value="LocalBusiness">General Local Business</option>
+  <option value="Dentist">Medical / Dental Clinic</option>
+  <option value="HVACBusiness">HVAC / Home Services</option>
+  <option value="RealEstateAgent">Real Estate Agency</option>
+  <option value="Plumber">Plumbing Service</option>
+  <option value="LegalService">Legal / Law Firm</option>
+  <option value="AutoRepair">Car / Auto Repair Shop</option>
+  <option value="Restaurant">Restaurant / Food Service</option>
+  <option value="RoofingContractor">Roofing Contractor</option>
+  <option value="AccountingService">Accounting & Tax Services</option>
+</select>
           </div>
 
           <div className="space-y-3">
@@ -134,12 +140,12 @@ export default function SchemaGenerator() {
           )}
         </div>
       </div>
-      {/* Programmatic SEO Internal Links Section */}
+     {/* Programmatic SEO Internal Links Section */}
 <div className="mt-16 pt-8 border-t border-gray-200">
   <h3 className="text-lg font-semibold text-gray-800 mb-4">
     Popular Schema Generators by Business Type
   </h3>
-  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+  <div className="grid grid-cols-2 md:grid-cols-5 gap-3 text-sm">
     <Link href="/schema/dental-clinic" className="text-blue-600 hover:underline">
       Dental Clinic Schema
     </Link>
@@ -163,6 +169,12 @@ export default function SchemaGenerator() {
     </Link>
     <Link href="/schema/hvac-service" className="text-blue-600 hover:underline">
       HVAC Service Schema
+    </Link>
+    <Link href="/schema/accounting-service" className="text-blue-600 hover:underline">
+      Accounting Services Schema
+    </Link>
+    <Link href="/schema/local-business" className="text-blue-600 hover:underline">
+      General Local Business Schema
     </Link>
   </div>
 </div>
