@@ -8,6 +8,14 @@ export default function Home() {
   const [category, setCategory] = useState("LocalBusiness");
   const [faqs, setFaqs] = useState([{ question: "", answer: "" }]);
   const [jsonLd, setJsonLd] = useState("");
+  const [copied, setCopied] = useState(false);
+
+const handleCopy = () => {
+  if (!jsonLd) return;
+  navigator.clipboard.writeText(jsonLd);
+  setCopied(true);
+  setTimeout(() => setCopied(false), 2000);
+};
 
   const handleAddFaq = () => {
     setFaqs([...faqs, { question: "", answer: "" }]);
@@ -132,18 +140,26 @@ export default function Home() {
         </div>
 
         {/* JSON-LD Output Box */}
-        <div>
-          <h2 className="text-sm font-semibold text-gray-700 mb-2">
-            Generated JSON-LD Output
-          </h2>
-          <textarea
-            readOnly
-            className="w-full h-96 p-4 font-mono text-xs bg-slate-900 text-green-400 rounded-lg border border-gray-800"
-            value={jsonLd}
-            placeholder="Click 'Generate' to output schema markup here..."
-          />
-        </div>
-      </div>
+<div>
+  <div className="flex justify-between items-center mb-2">
+    <h2 className="text-sm font-semibold text-gray-700">
+      Generated JSON-LD Output
+    </h2>
+    <button
+      type="button"
+      onClick={handleCopy}
+      className="text-xs bg-gray-800 text-white px-3 py-1.5 rounded hover:bg-gray-700 transition"
+    >
+      {copied ? "Copied!" : "Copy Code"}
+    </button>
+  </div>
+  <textarea
+    readOnly
+    className="w-full h-96 p-4 font-mono text-xs bg-slate-900 text-green-400 rounded-lg border border-gray-800"
+    value={jsonLd}
+    placeholder="Click 'Generate' to output schema markup here..."
+  />
+</div>
 
       {/* Programmatic SEO Internal Links Section */}
       <div className="mt-16 pt-8 border-t border-gray-200">
