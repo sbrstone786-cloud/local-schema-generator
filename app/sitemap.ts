@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://local-schema-generator.vercel.app/'; //
+  // End se trailing slash (/) hata diya hai taake double slash na bane
+  const baseUrl = 'https://local-schema-generator.vercel.app';
 
   const categories = [
     'dental-clinic',
