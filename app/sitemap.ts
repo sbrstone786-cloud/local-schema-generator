@@ -1,10 +1,10 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // End se trailing slash (/) hata diya hai taake double slash na bane
   const baseUrl = 'https://local-schema-generator.vercel.app';
 
   const categories = [
+    // Existing Top Categories
     'dental-clinic',
     'plumbing-service',
     'real-estate-agency',
@@ -15,6 +15,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'hvac-service',
     'accounting-service',
     'local-business',
+    // New High-Demand Categories
+    'electrician',
+    'cleaning-service',
+    'pest-control',
+    'auto-detailing',
+    'moving-company',
+    'landscaping-service',
+    'locks-keys-locksmith',
+    'personal-trainer-gym',
+    'veterinary-care',
+    'photography-studio'
   ];
 
   const categoryUrls = categories.map((category) => ({
